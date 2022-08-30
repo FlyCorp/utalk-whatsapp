@@ -9,16 +9,15 @@ use \GuzzleHttp\Client as HttpClient;
 
 class UtalkWhatsappHelper
 {
-    /**
-     * Get the app's version string
-     *
-     * If a file <base>/version exists, its contents are trimmed and used.
-     * Otherwise we get a suitable string from `git describe`.
-     *
-     * @throws Exception\CouldNotGetVersionException if there is no version file and `git
-     * describe` fails
-     * @return string Version string
-     */
+/**
+* M;etodo responsável por enviar mesnagems via whatsaoo poe meio da ferramenta UMBLER
+* 
+* @param string $token Chave de acesso que deve ser  adiquirida na ferramenta Utalk.
+* @param string $number Numero de telefone no formato vide exemplo 5531996141290 , onde temos CodPais | DDD | Numero
+* @param string $text Mensagem a ser enviada.
+
+* @return object Retorno do endpont.
+*/
     public static function send($token,$number,$text)
     {
         
