@@ -10,9 +10,9 @@ use \GuzzleHttp\Client as HttpClient;
 class UtalkWhatsappHelper
 {
 /**
-* M;etodo responsável por enviar mesnagems via whatsaoo poe meio da ferramenta UMBLER
+* Método responsável por enviar mesnagems via whatsapp por meio da ferramenta UMBLER
 * 
-* @param string $token Chave de acesso que deve ser  adiquirida na ferramenta Utalk.
+* @param string $token  Chave de acesso que deve ser  adiquirida na ferramenta Utalk.
 * @param string $number Numero de telefone no formato vide exemplo 5531996141290 , onde temos CodPais | DDD | Numero
 * @param string $text Mensagem a ser enviada.
 
