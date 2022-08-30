@@ -22,20 +22,33 @@ class UtalkWhatsappHelper
     public static function send($token,$number,$text)
     {
         
-        $number = sprintf( "%s@c.us",preg_replace( '/[^0-9]/', '', $number ));
+        try {
 
-        $zap = new HttpClient();
+            $number = sprintf( "%s@c.us",preg_replace( '/[^0-9]/', '', $number ));
 
-                    $response = $zap->post("https://v1.utalk.chat/send/`{$token}`", [
-                        'form_params' => [
-                            'cmd'     => 'chat',
-                            'token'   => `{$token}`,
-                            "to"      =>  $number,
-                            "msg"     =>  $text
-                        ]
-                    ]);
+            $zap = new HttpClient();
+    
+                        $response = $zap->post("https://v1.utalk.chat/send/`{$token}`", [
+                            'form_params' => [
+                                'cmd'     => 'chat',
+                                'token'   => `{$token}`,
+                                "to"      =>  $number,
+                                "msg"     =>  $text
+                            ]
+                        ]);
+    
+            return json_encode($response);
+    
+        } catch (\Throwable $th) {
 
-        return json_encode($response);
+           return json_encode([
+
+                "status" => "error",
+                "trace"  => $th
+                
+            ]);
+
+        }
 
     }
    
