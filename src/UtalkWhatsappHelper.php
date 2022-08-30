@@ -37,7 +37,7 @@ class UtalkWhatsappHelper
                             ]
                         ]);
     
-            return json_encode($response);
+            return json_decode($response->getBody()->getContents());
     
         } catch (\Throwable $th) {
 
