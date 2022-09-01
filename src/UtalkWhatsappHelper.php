@@ -22,15 +22,14 @@ class UtalkWhatsappHelper
     {
         
         try {
-
             $number = sprintf( "%s@c.us",preg_replace( '/[^0-9]/', '', $number ));
 
             $zap = new HttpClient();
     
-                        $response = $zap->post(`https://v1.utalk.chat/send/{$token}`, [
+                        $response = $zap->post("https://v1.utalk.chat/send/".$token, [
                             'form_params' => [
                                 'cmd'     => 'chat',
-                                'token'   => `{$token}`,
+                                'token'   =>  $token,
                                 "to"      =>  $number,
                                 "msg"     =>  $text
                             ]
